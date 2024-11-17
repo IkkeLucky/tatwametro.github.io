@@ -74,7 +74,7 @@ export default function ElementStateVisualizer() {
     const updateState = () => {
       const now = new Date()
       const sunrise = new Date(now)
-      sunrise.setHours(0, 0, 0, 0) // Set sunrise to 6:00 AM
+      sunrise.setHours(0, 0, 0, 0) // Set sunrise to 6:00 AM, lo cambie a 0,0,0,0 para poder hacerlo a las 00:00 
       const newState = getState(sunrise, now)
       setCurrentState(newState)
     }
