@@ -7,30 +7,30 @@ const states = [
     name: 'Akash',
     background: 'bg-gradient-to-b from-gray-900 via-purple-900 to-violet-800', 
     descriptions: [
-      'Flames dance and flicker Flames dance and flicker Flames dance and flicker Flames dance and flicker Flames dance and flicker Flames dance and flicker Flames dance and flicker',
-      'Heat radiates intensely Flames dance and flicker Flames dance and flicker vFlames dance and flicker Flames dance and flicker',
-      'Sparks fly through the air Flames dance and flickerFlames dance and flickerFlames dance and flicker',
-      'The world is bathed in a warm glow Flames dance and flickerFlames dance and flickerFlames dance and flicker'
+      'Principio organico, elemento de destruccion y abolicion',
+      'Se deben evitar estos 24 minutos que vibra akash, ocurren grandes decepciones y esperanzas destruidas',
+      'Akash obra disolviendo, oponiendose y destruyendo todo l ocorporal. En el duerme el principio de todo ser, el enigma de toda destruccion y creacion',
+      'Retorno al estado primitivo, no debemos hacer nada, debemos aislarnos, quedarnos tranquilos en meditacion y pensamiento sobre el principio'
     ]
   },
   {
     name: 'Vayu',
     background: 'bg-gradient-to-b from-blue-600 via-blue-400 to-cyan-300',
     descriptions: [
-      'Waves crash and recede',
-      'A cool mist fills the air',
-      'Ripples spread across still surfaces',
-      'The sound of flowing water echoes'
+      'Primera manifestacion de la vida, representa el movimiento. Velocidad y movimiento, aire, vientos, navegacion y todo lo que sea avanzar',
+      'Ascension a montanas, ejercicio y todo relacionado a moverse debe elegirse en este Tatwa. Todo movimiento que se inicie en este Tatwa ayuda a no cansarse tanto',
+      'Aspectos relacionados con facultades intelectuales y espirituales. Mayor proteccion y desarrollo intelectual y mas sentido logico y juicios intuitivos',
+      'Vayu generalmente '
     ]
   },
   {
     name: 'Tejas',
     background: 'bg-gradient-to-b from-red-600 via-orange-500 to-yellow-400',
     descriptions: [
-      'The ground feels solid and stable',
-      'Plants and trees sway gently',
-      'Rich soil nurtures life',
-      'Mountains stand tall and immovable'
+      'Aumento de energias, este es el momento mas activo y mas productivo del dia',
+      'Tatwa donde se encuentra la confianza absoluta en uno mismo',
+      'Momento donde el exceso de energias puede derivar en momentos agresivos, enojadizos, belicosos, celosos. Tejas es portador de luchas y discusiones',
+      'El principio de Tejas es caliente, cuando vibra este tatwas se eleva nuestra temperatura'
     ]
   },
   {
@@ -47,10 +47,10 @@ const states = [
     name: 'Apas',
     background: 'bg-gradient-to-b from-yellow-200 via-yellow-100 to-white', 
     descriptions: [
-      'Shadows deepen and spread',
-      'The world is shrouded in mystery',
-      'Stars twinkle in the vast expanse',
-      'A calm silence envelops everything'
+      'Tatwas donde se puede hacer abortar el mal, correspondiente al agua, donde las peleas no duran mucho tiempo',
+      'El tatwa Apas obra concentrando, buen momento de iniciar negocios, depositos de dinero o hacer especulaciones. Tatwa de la riqueza y opulencia',
+      'Tatwa del amor sexual y concepcion en el vientre de la madre. Tatwas que influencia al amor',
+      'Este momento trae paz, alegria, juego, gozo, baile y placeres de todas las clases'
     ]
   }
 ]
