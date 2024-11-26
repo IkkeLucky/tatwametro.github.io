@@ -96,7 +96,11 @@ function App() {
 	Llama a la api SI O SI con las coordenadas de ubicacion correctas.
 	Hasta que no suceda esto se renderiza la pagina de "Cargando.."
 	De otra forma, devuelve un ubicacion y horario de amanecer cualquiera
+	
+	Lo malo es que esta el riesgo que en el cambio automatico de estado
+	pida la ubicacion de vuelta
 	*/
+
 	React.useEffect(() => {
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition((position) => {
