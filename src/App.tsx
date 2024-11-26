@@ -139,7 +139,7 @@ function App() {
 				setCurrentState(getState(sunriseTime, actualTime));
 				setCountdownTime(getTime(sunriseTime, actualTime));
 
-				console.log('called api');
+				//console.log('called api');
 			})
 			.catch((error) => {
 				setError(error);
