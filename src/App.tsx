@@ -226,8 +226,8 @@ function App() {
 		return (
 			<div className={`w-full min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 transition-colors duration-1000 ${stateToShow.background}`}> 		
 				
-				{countdownTime < 10 ? <h5>A punto de cambiar de estado...</h5> : ""}
-				{secondsRem < 10 ? <h5>Tiempo restante para el siguiente estado: {minutesRem}:0{secondsRem} </h5> : <h5>Tiempo restante para el siguiente estado: {minutesRem}:{secondsRem} </h5>}
+				{countdownTime < 10 ? <h5 className="text-white">A punto de cambiar de estado...</h5> : ""}
+				{secondsRem < 10 ? <h5 className="text-white">Tiempo restante para el siguiente estado: {minutesRem}:0{secondsRem} </h5> : <h5 className="text-white">Tiempo restante para el siguiente estado: {minutesRem}:{secondsRem} </h5>}
 				<h5 className="text-3xl sm:text-4xl mb-6 sm:mb-8 text-white">Estas en: {currentCountry}</h5>
 				<h1 className="text-3xl sm:text-4xl md:text-5xl font-bold mb-6 sm:mb-8 text-white">{stateToShow.name}</h1>
 				<div className="flex flex-col space-y-4 w-full max-w-xs sm:max-w-sm md:max-w-md lg:max-w-lg xl:max-w-xl mx-auto px-4">
