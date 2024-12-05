@@ -4,7 +4,7 @@ import { useState, useEffect } from 'react'
 
 const states = [
   {
-    name: 'Akash1',
+    name: 'Akash',
     background: 'bg-gradient-to-b from-gray-900 via-purple-900 to-violet-800', 
     descriptions: [
       'Principio organico, elemento de destruccion y abolicion',
@@ -14,17 +14,17 @@ const states = [
     ]
   },
   {
-    name: 'Vayu2',
+    name: 'Vayu',
     background: 'bg-gradient-to-b from-blue-600 via-blue-400 to-cyan-300',
     descriptions: [
       'Primera manifestacion de la vida, representa el movimiento. Velocidad y movimiento, aire, vientos, navegacion y todo lo que sea avanzar',
       'Ascension a montanas, ejercicio y todo relacionado a moverse debe elegirse en este Tatwa. Todo movimiento que se inicie en este Tatwa ayuda a no cansarse tanto',
       'Aspectos relacionados con facultades intelectuales y espirituales. Mayor proteccion y desarrollo intelectual y mas sentido logico y juicios intuitivos',
-      'Vayu generalmente '
+      'Vayu generalmente es muy favorable para nosotros y tambien toma mucha presencia al momento de las palabras, sea para el bien como tambien para las calumnias'
     ]
   },
   {
-    name: 'Tejas3',
+    name: 'Tejas',
     background: 'bg-gradient-to-b from-red-600 via-orange-500 to-yellow-400',
     descriptions: [
       'Aumento de energias, este es el momento mas activo y mas productivo del dia',
@@ -34,17 +34,17 @@ const states = [
     ]
   },
   {
-    name: 'Prithvi4',
+    name: 'Prithvi',
     background: 'bg-gradient-to-b from-green-800 via-green-600 to-yellow-500', 
     descriptions: [
-      'Brightness illuminates everything',
-      'Shadows retreat to the corners',
-      'A sense of clarity and vision prevails',
-      'The world is awash in radiance'
+      'Momento donde se siente la salud, y bienestar especial. En este tiempo se siente el apetito y es bueno tomar alimentos',
+      'Es el tatwa del bienestar, de la alegria y la vida. Pero tambien de la justicia, el humanitarianismo y amor universal',
+      'En Prithvi no se siente odio ni temor y todo lo pasional se aleja de nosotros',
+      'Es la representacion del amor filial y paternal. Donde se sienten los lazos de amor reciprocos e ideales'
     ]
   },
   {
-    name: 'Apas5',
+    name: 'Apas',
     background: 'bg-gradient-to-b from-yellow-200 via-yellow-100 to-white', 
     descriptions: [
       'Tatwas donde se puede hacer abortar el mal, correspondiente al agua, donde las peleas no duran mucho tiempo',
@@ -69,8 +69,8 @@ function getState(sunriseTime: Date, actualTime: Date) {
 
 export default function ElementStateVisualizer() {
   	const [currentState, setCurrentState] = useState(0);
-	const [currentCountry, setCurrentCountry] = useState();
-	const [error, setError] = useState();
+	  const [currentCountry, setCurrentCountry] = useState();
+	  const [error, setError] = useState();
 
 	useEffect(() => {
 		const updateState = () => {
@@ -78,7 +78,7 @@ export default function ElementStateVisualizer() {
 				let lat = position.coords.latitude;
 				let lon = position.coords.longitude;
 
-				const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=0e1414393ec8b28124eff5028e775326&units=metric`
+		    const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=0e1414393ec8b28124eff5028e775326&units=metric`
 			
 				fetch(apiUrl)
 					.then(response => {
@@ -103,13 +103,12 @@ export default function ElementStateVisualizer() {
 			});
 		}
 
-	// updateState() // Initial update
-    // const timer = setInterval(updateState, 60000) // Update every minute
+    updateState() // Initial update
+      const timer = setInterval(updateState, 60000) // Update every minute
 
-    // return () => clearInterval(timer)
+      return () => clearInterval(timer)
 
 
-    return () => updateState()
   }, [])
 
   	const state = states[currentState]
