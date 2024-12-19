@@ -1,6 +1,8 @@
 'use client'
-import * as React from 'react';
+import { useState, useEffect, useRef } from 'react';
+import Calendar from './Calendar';
 import './App.css';
+import "react-datepicker/dist/react-datepicker.css";
 
 const states = [
 	{
@@ -83,14 +85,14 @@ function getTime(sunriseTime: Date, actualTime: Date) {
 }
 
 function App() {
-	const [countdownTime, setCountdownTime] = React.useState(Number);
-	const [error, setError] = React.useState("");
-	const [currentState, setCurrentState] = React.useState<number | null>(null);
-	const [currentCountry, setCurrentCountry] = React.useState<string | null>(null);
-	const countdownIntervalId = React.useRef(0);
-	const [stateChanged, setStateChanged] = React.useState(true);
-	const [minutesRem, setMinutesRem] = React.useState(0);
-	const [secondsRem, setSecondsRem] = React.useState(0);
+	const [countdownTime, setCountdownTime] = useState(Number);
+	const [error, setError] = useState("");
+	const [currentState, setCurrentState] = useState<number | null>(null);
+	const [currentCountry, setCurrentCountry] = useState<string | null>(null);
+	const countdownIntervalId = useRef(0);
+	const [stateChanged, setStateChanged] = useState(true);
+	const [minutesRem, setMinutesRem] = useState(0);
+	const [secondsRem, setSecondsRem] = useState(0);
 
 	/*
 	Llama a la api SI O SI con las coordenadas de ubicacion correctas.
@@ -101,7 +103,7 @@ function App() {
 	pida la ubicacion de vuelta
 	*/
 
-	React.useEffect(() => {
+	useEffect(() => {
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition((position) => {
 				const lat = position.coords.latitude;
@@ -121,6 +123,7 @@ function App() {
 		const apiUrl = `https://api.openweathermap.org/data/2.5/weather?lat=${lat}&lon=${lon}&appid=0e1414393ec8b28124eff5028e775326&units=metric`;
 		fetch(apiUrl)
 			.then((response) => {
+				console.log("called api")
 				if (response.ok) {
 					return response.json();
 				} else {
@@ -147,7 +150,7 @@ function App() {
 	}
 
 
-	React.useEffect(() => {
+	useEffect(() => {
 		return () => {
 			doStartCountdown();
 		};
@@ -158,7 +161,7 @@ function App() {
 	vuelta a la api) y se resetea el contador llamando de vuelta 
 	a la funcion getTime()
 	*/
-	React.useEffect(() => {
+	useEffect(() => {
 		if (countdownTime < 0) {
 			doResetCountdown();
 			setStateChanged(false);
@@ -191,7 +194,7 @@ function App() {
 	"-2", etc. Tiene que haber una mejor forma pero no se me
 	ocurre todavia.
 	*/
-	React.useEffect(() => {
+	useEffect(() => {
 		if (countdownTime > 0) {
 			setMinutesRem(Math.floor(countdownTime / 60));
 			setSecondsRem(countdownTime % 60);
@@ -238,6 +241,9 @@ function App() {
 							{description}
 						</div>
 					))}
+				</div>
+				<div className="mt-5">
+					<Calendar />
 				</div>
 			</div>
 		)
