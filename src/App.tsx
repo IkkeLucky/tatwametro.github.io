@@ -4,7 +4,7 @@ import "react-datepicker/dist/react-datepicker.css";
 import { getSunrise } from "sunrise-sunset-js"
 import { CountryDropdown } from 'react-country-region-selector';
 import _data from "./assets/country-by-geo-coordinates.json";
-//import Calendar from './Calendar';
+import Calendar from './Calendar';
 
 interface Data {
 	country: string;
@@ -69,7 +69,6 @@ const states = [
 	}
 ]
 
-
 function getState(sunriseTime: Date) {
 	let state = 0;
 	const actualTime = new Date();
@@ -84,10 +83,6 @@ function getState(sunriseTime: Date) {
 	return state; 
 }
 
-/*
-devuelve la diferencia en segundos entre la hora de inicio del
-estado actual y la hora de inicio del siguiente
-*/
 function getTime(sunriseTime: Date) {
 	const actualTime = new Date();
     while (sunriseTime < actualTime) {
@@ -97,7 +92,6 @@ function getTime(sunriseTime: Date) {
     const diff = sunriseTime.getTime() - actualTime.getTime();
     return Math.floor(diff / 1000);
 }
-
 
 function App() {
 	const [country, setCountry] = useState(String);
@@ -219,6 +213,9 @@ function App() {
 			<div className="w-full min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
 				<CountryDropdown value={country} onChange={(val) => setCountry(val)} />
 				<button className="btn border-green-500 p-1 mt-10" onClick={click}>Por ubicacion</button>
+				<div className="mt-5">
+						<Calendar />
+				</div>
 			</div>
 		)
 	} else if (onError) {
@@ -237,8 +234,8 @@ function App() {
 			const stateToShow = states[currentState - 1]; // Adjusting to 0-based index for our states array
 		
 			return (
-				<div className={`w-full min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 transition-colors duration-1000 ${stateToShow.background}`}> 		
-					{countdownTime < 10 ? <h5 className="text-white">A punto de cambiar de estado...</h5> : ""}
+				<div className={`w-full m-0 min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 transition-colors duration-1000 ${stateToShow.background}`}> 		
+					{countdownTime < 6 ? <h5 className="text-white">A punto de cambiar de estado...</h5> : ""}
 					{secondsRem < 10 ? <h5 className="text-white">Tiempo restante para el siguiente estado: {minutesRem}:0{secondsRem} </h5> : <h5 className="text-white">Tiempo restante para el siguiente estado: {minutesRem}:{secondsRem} </h5>}
 					
 					<h1 className="text-1xl font-bold mb-6 sm:mb-8 text-white">Estas en: {country}</h1>
@@ -252,9 +249,7 @@ function App() {
 							</div>
 						))}
 					</div>
-					{/* <div className="mt-5">
-						<Calendar />
-					</div> */}
+
 				</div>
 			)
 		} catch (error) {
