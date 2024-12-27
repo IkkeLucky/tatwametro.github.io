@@ -155,7 +155,7 @@ const Auto: React.FC<Props> = ({ lat, lon }) => {
             const stateToShow = states[currentState - 1]; // Adjusting to 0-based index for our states array
         
             return (
-                <div className={`w-full m-0 min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 transition-colors duration-1000 ${stateToShow.background}`}> 		
+                <div className={`w-full min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8 transition-colors duration-1000 ${stateToShow.background}`}> 		
                     {countdownTime < 6 ? <h5 className="text-white">A punto de cambiar de estado...</h5> : ""}
                     {secondsRem < 10 ? <h5 className="text-white">Tiempo restante para el siguiente estado: {minutesRem}:0{secondsRem} </h5> : <h5 className="text-white">Tiempo restante para el siguiente estado: {minutesRem}:{secondsRem} </h5>}
                     

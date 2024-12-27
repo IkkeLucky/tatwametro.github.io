@@ -13,7 +13,7 @@ function App() {
 	const [choose, setChoose] = useState("none");
 	const [onError, setOnError] = useState(String);
 
-	function click() {
+	function getPosition() {
 		if(navigator.geolocation) {
 			navigator.geolocation.getCurrentPosition((position) => {
 				setLat(position.coords.latitude);
@@ -31,9 +31,9 @@ function App() {
 
 	if (choose == "none") {
 		return (
-			<div className="w-full min-h-screen flex flex-col items-center justify-center p-4 sm:p-6 md:p-8">
+			<div className="w-full min-h-screen flex flex-col items-center justify-center">
 				<CountryDropdown value={country} onChange={(val) => {setCountry(val); setChoose("manual")}} />
-				<button className="btn border-green-500 p-1 mt-10" onClick={click}>Por ubicacion</button>
+				<button className="btn border-green-500 p-1 mt-10" onClick={getPosition}>Por ubicacion</button>
 				<div className="mt-5">
 					<Calendar />
 				</div>
