@@ -35,7 +35,7 @@ const Calendar = () => {
         <>
 			<DatePicker showTimeSelect showIcon selected={calendarDate} onChange={(date: Date | null) => {if (date) changeDate(date)}}></DatePicker>
             <p className='mt-5'><b>{calendarDate.toISOString()}</b></p>
-            <p><b>Estado a las: </b>{state}</p>
+            <p><b>Estado: </b>{state}</p>
 		</>
     )
 }
